@@ -24,7 +24,9 @@ if(isset($_GET['create'])) {
     $_SESSION['notification'] = "That user ID already exists";
     header("Location: https://todo.nickweld.com");
   } else { // If one doesn't exist, create it, set session variable, and redirect to list
-    $sql = "INSERT INTO user (userID, password) VALUES ('{$_GET['newUser']}', '{$_GET['newPassword']}')";
+    $newUser = mysqli_real_escape_string($_GET['newUser']);
+    $newPassword = mysqli_real_escape_string($_GET['newPassword']);
+    $sql = "INSERT INTO user (userID, password) VALUES ('{$newUser}', '{$newPassword}')";
     $result = mysqli_query($conn, $sql);
     if($result) { // If successful, go to list
       $_SESSION['user'] = $_GET['newUser'];
