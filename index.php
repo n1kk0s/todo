@@ -5,7 +5,7 @@ session_start();
 
 include('connect.php');
 
-function authenticate() {
+if(isset($_GET['login'])) {
   $sql = "SELECT * FROM user WHERE userID='{$_GET['userID']}' AND password='{$_GET['password']}'";
   $result = mysqli_query($conn, $sql);
   if(mysqli_num_rows($result) > 0) { // If login is successful
@@ -17,7 +17,7 @@ function authenticate() {
   }
 }
 
-function create() {
+if(isset($_GET['create'])) {
   $sql = "SELECT * FROM user WHERE userID='{$_GET['newUser']}'"; // Check for existing user ID
   $result = mysqli_query($conn, $sql);
   if(mysqli_num_rows($result) > 0) { // If one already exists, don't create account
@@ -47,7 +47,7 @@ function create() {
   echo $_SESSION['notification'];
   ?>
 
-  <form action='authenticate()' method='get'>
+  <form method='get'>
     <label for=userID>User ID:</label>
     <input type=text name=userID><br>
     <label for=password>Password:</label>
@@ -55,7 +55,7 @@ function create() {
     <input type=submit name='login' value='LOGIN'>
   </form>
   <h1>No account?</h1>
-  <form action='create()' method='get'>
+  <form method='get'>
     <label for='newUser'>User ID:</label>
     <input type='text' name='newUser'><br>
     <label for='newPassword'>Password:</label>
