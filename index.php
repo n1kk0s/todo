@@ -10,7 +10,7 @@ if(isset($_GET['login'])) {
   $password = $_GET['password'];
   $sql = "SELECT * FROM user WHERE userID='{$user}' AND password='{$password}'";
   $result = mysqli_query($conn, $sql);
-  if(mysqli_num_rows($result) > 0) { // If login is successful
+  if($result) { // If login is successful
     $_SESSION['user'] = $_GET['userID'];
     header("Location: https://todo.nickweld.com/list.php");
   } else { // If login isn't successful
@@ -26,10 +26,11 @@ if(isset($_GET['create'])) {
     $_SESSION['notification'] = "That user ID already exists";
     header("Location: https://todo.nickweld.com");
   } else { // If one doesn't exist, create it, set session variable, and redirect to list
-    $newUser = mysqli_real_escape_string($_GET['newUser']);
-    $newPassword = mysqli_real_escape_string($_GET['newPassword']);
+    $newUser = $_GET['newUser'];
+    $newPassword = $_GET['newPassword'];
     $sql = "INSERT INTO user (userID, password) VALUES ('{$newUser}', '{$newPassword}')";
     $result = mysqli_query($conn, $sql);
+    echo $result;
     if($result) { // If successful, go to list
       $_SESSION['user'] = $_GET['newUser'];
       header("Location: https://todo.nickweld.com/list.php");

@@ -10,10 +10,11 @@
   <!-- Add "form" for new item here -->
   <table>
     <?php
-      $sql = "SELECT title FROM task WHERE userID='{$_SESSION[user]}'";
+      $user = $_SESSION['user'];
+      $sql = "SELECT title FROM task WHERE userID='{$user}'";
       $result = mysqli_query($conn, $sql);
 
-      if ($result->mysqli_num_rows > 0) {
+      if ($result) {
         while ($row = $result->fetch_assoc()) {
           echo "<tr><td>".$row['title']."</td></tr>";
         }
