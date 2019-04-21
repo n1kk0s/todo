@@ -1,11 +1,18 @@
 @font-face {
-  font-family: BadScript;
-  src: url(BadScript-Regular.ttf);
+  font-family: Comfortaa;
+  src: url(Comfortaa.ttf);
+}
+
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(RobotoCondensed.ttf);
 }
 
 body {
-  background-color: #03275A;
+  /* background-color: #03275A; */
+  background-image: url(images/chalkboard.jpg);
   color: #f3f3f3;
+  font-family: 'RobotoCondensed', sans-serif;
   margin: 0 auto;
   padding: 0;
   width: 100vw;
@@ -17,14 +24,14 @@ body {
   margin-bottom:5vh;
   text-align: center;
   font-size: 3rem;
-  font-family: 'BadScript', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .subtitle {
   margin-top: 10vh;
   font-size: 1.7rem;
   text-align: center;
-  font-family: 'BadScript', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .label {
@@ -49,18 +56,36 @@ body {
 
 .submit {
   width: 75vw;
-  background-color: #1A7DD7;
+  font-family: 'Comfortaa', sans-serif;
+  background-color: #F37402;
   color: inherit;
   display: block;
-  margin: 0 auto;
+  margin: 2vh auto;
   padding: 15px;
   border-radius: 2px;
   border: none;
   box-sizing: border-box;
 }
 
+/* .create {
+  width: 75vw;
+  font-family: 'Comfortaa', sans-serif;
+  background-color: #F37402;
+  color: inherit;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 2px;
+  border: none;
+  box-sizing: border-box;
+
+} */
+
 .notification {
   text-align: center;
+}
+
+table {
+  margin-bottom: 3vh;
 }
 
 tr {
@@ -69,4 +94,28 @@ tr {
 
 td {
 
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f3f3f3;
+  font-family: 'RobotoCondensed', sans-serif;
+  opacity: .9; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #f3f3f3;
+  font-family: 'RobotoCondensed', sans-serif;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #f3f3f3;
+  font-family: 'RobotoCondensed', sans-serif;
 }

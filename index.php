@@ -60,18 +60,21 @@ if(isset($_GET['create'])) {
 
   <form action='index.php' method='get'>
     <label class='label' for=userID>User ID:</label>
-    <input class='field' type=text name=userID><br>
+    <input class='field' type=text name=userID placeholder="Username" required><br>
     <label class='label' for=password>Password:</label>
-    <input class='field' type=password name=password></br>
+    <input class='field' type=password name=password placeholder="Password" required></br>
     <input class='submit' type=submit name='login' value='LOGIN'>
   </form>
   <h1 class='subtitle'>No account?</h1>
   <form action='index.php' method='get'>
     <label class='label' for='newUser'>User ID:</label>
-    <input class='field' type='text' name='newUser'><br>
+    <input class='field' type='text' name='newUser' placeholder="Username" required><br>
     <label class='label' for='newPassword'>Password:</label>
-    <input class='field' type='text' name='newPassword'></br>
+    <input class='field' type='password' name='newPassword' placeholder="Password" required></br>
     <input class='submit' type='submit' name='create' value='CREATE'>
   </form>
+  <footer>
+    <p>todo.nickweld.com</p>
+  </footer>
 </body>
 </html>

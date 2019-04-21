@@ -44,12 +44,12 @@
   }
   ?>
 
-  <h1>Here's what to do</h1>
+  <h1 class='title'>To-Do's</h1>
 
   <?php if(!empty($_SESSION['notification'])) {echo $_SESSION['notification']; }?>
 
   <form action='https://todo.nickweld.com/list.php' method='get'>
-    <input class='field' type=text name='task' placeholder='New task'>
+    <input class='field' type=text name='task' placeholder='New task' required>
     <input class='submit' type=submit name='newTask' value='CREATE'>
   </form>
 
@@ -68,8 +68,11 @@
       }
     ?>
   </table>
-  <form action='https://todo.nickweld.com/list.php' method='get'>
-    <input class='submit' type=submit name='exit' value='LOG OUT'>
-  </form>
+  <footer>
+    <form action='list.php' method='get'>
+      <input class='submit' type=submit name='exit' value='LOG OUT'>
+    </form>
+    <p>todo.nickweld.com</p>
+  </footer>
 </body>
 </html>
