@@ -5,9 +5,9 @@
   <?php
   include('connect.php')
 
-  if(is_null($_SESSION['user'])) { // If session variable isn't set, automatically go to index
-    header("Location: https://todo.nickweld.com");
-  }
+  // if(is_null($_SESSION['user'])) { // If session variable isn't set, automatically go to index
+  //   header("Location: https://todo.nickweld.com");
+  // }
 
   if(isset($_GET['newTask'])) {
     $task = $_GET['task'];
@@ -27,17 +27,17 @@
 
   <table>
     <?php
-      // $user = $_SESSION['user'];
-      // $sql = "SELECT title FROM task WHERE userID='{$user}'";
-      // $result = mysqli_query($conn, $sql);
-      //
-      // if ($result) {
-      //   while ($row = $result->fetch_assoc()) {
-      //     echo "<tr><td>".$row['title']."</td></tr>";
-      //   }
-      // } else {
-      //   echo "You don't have any tasks yet!";
-      // }
+      $user = $_SESSION['user'];
+      $sql = "SELECT title FROM task WHERE userID='{$user}'";
+      $result = mysqli_query($conn, $sql);
+
+      if ($result) {
+        while ($row = $result->fetch_assoc()) {
+          echo "<tr><td>".$row['title']."</td></tr>";
+        }
+      } else {
+        echo "You don't have any tasks yet!";
+      }
     ?>
   </table>
 </body>
