@@ -10,7 +10,7 @@ if(isset($_GET['login'])) {
   $password = $_GET['password'];
   $sql = "SELECT * FROM user WHERE userID='{$user}' AND password='{$password}'";
   $result = mysqli_query($conn, $sql);
-  if($result) { // If login is successful
+  if(mysqli_num_rows($result)>0) { // If login is successful
     $_SESSION['user'] = $_GET['userID'];
     header("Location: https://todo.nickweld.com/list.php");
   } else { // If login isn't successful
