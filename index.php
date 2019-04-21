@@ -46,7 +46,7 @@ if(isset($_GET['create'])) {
   <h1>To Do List</h1>
 
   <?php
-  echo $_SESSION['notification'];
+  if(isset($_SESSION['notification'])) {echo $_SESSION['notification'];}
   ?>
 
   <form action='index.php' method='get'>
