@@ -15,7 +15,7 @@ if(isset($_GET['login'])) {
     header("Location: https://todo.nickweld.com/list.php");
   } else { // If login isn't successful
     header("Location: https://todo.nickweld.com");
-    $_SESSION['notification'] = "User ID or password was incorrect";
+    $_SESSION['notification'] = "<p class='notification'>User ID or password was incorrect</p>";
   }
 }
 
@@ -23,7 +23,7 @@ if(isset($_GET['create'])) {
   $sql = "SELECT * FROM user WHERE userID='{$_GET['newUser']}'"; // Check for existing user ID
   $result = mysqli_query($conn, $sql);
   if(mysqli_num_rows($result) > 0) { // If one already exists, don't create account
-    $_SESSION['notification'] = "That user ID already exists";
+    $_SESSION['notification'] = "<p class='notification'>That user ID already exists</p>";
     header("Location: https://todo.nickweld.com");
   } else { // If one doesn't exist, create it, set session variable, and redirect to list
     $newUser = $_GET['newUser'];
@@ -35,7 +35,7 @@ if(isset($_GET['create'])) {
       $_SESSION['user'] = $_GET['newUser'];
       header("Location: https://todo.nickweld.com/list.php");
     } else { // If not, set notification and reload
-      $_SESSION['notification'] = "Something went wrong creating your account";
+      $_SESSION['notification'] = "<p class='notification'>Something went wrong creating your account</p>";
       header("Location: https://todo.nickweld.com");
     }
   }
@@ -43,29 +43,35 @@ if(isset($_GET['create'])) {
 
 ?>
 
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <title>To Do</title>
+  <link rel='stylesheet' type='text/css' href="styles.css">
+  <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-  <h1>To Do List</h1>
+  <h1 class='title'>To Do List</h1>
 
   <?php
   if(isset($_SESSION['notification'])) {echo $_SESSION['notification'];}
   ?>
 
   <form action='index.php' method='get'>
-    <label for=userID>User ID:</label>
-    <input type=text name=userID><br>
-    <label for=password>Password:</label>
-    <input type=password name=password></br>
-    <input type=submit name='login' value='LOGIN'>
+    <label class='label' for=userID>User ID:</label>
+    <input class='field' type=text name=userID><br>
+    <label class='label' for=password>Password:</label>
+    <input class='field' type=password name=password></br>
+    <input class='submit' type=submit name='login' value='LOGIN'>
   </form>
-  <h1>No account?</h1>
+  <h1 class='subtitle'>No account?</h1>
   <form action='index.php' method='get'>
-    <label for='newUser'>User ID:</label>
-    <input type='text' name='newUser'><br>
-    <label for='newPassword'>Password:</label>
-    <input type='text' name='newPassword'></br>
-    <input type='submit' name='create' value='CREATE'>
+    <label class='label' for='newUser'>User ID:</label>
+    <input class='field' type='text' name='newUser'><br>
+    <label class='label' for='newPassword'>Password:</label>
+    <input class='field' type='text' name='newPassword'></br>
+    <input class='submit' type='submit' name='create' value='CREATE'>
   </form>
 </body>
 </html>

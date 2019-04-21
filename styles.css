@@ -1,0 +1,72 @@
+@font-face {
+  font-family: BadScript;
+  src: url(BadScript-Regular.ttf);
+}
+
+body {
+  background-color: #03275A;
+  color: #f3f3f3;
+  margin: 0 auto;
+  padding: 0;
+  width: 100vw;
+  line-height: 1.3vh;
+}
+
+.title {
+  margin-top: 15vh;
+  margin-bottom:5vh;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'BadScript', sans-serif;
+}
+
+.subtitle {
+  margin-top: 10vh;
+  font-size: 1.7rem;
+  text-align: center;
+  font-family: 'BadScript', sans-serif;
+}
+
+.label {
+  display: none;
+}
+
+.field {
+  width: 75vw;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  display: block;
+  margin: 0 auto;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.check {
+
+}
+
+.submit {
+  width: 75vw;
+  background-color: #1A7DD7;
+  color: inherit;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 2px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.notification {
+  text-align: center;
+}
+
+tr {
+
+}
+
+td {
+
+}
