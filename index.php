@@ -49,7 +49,7 @@ if(isset($_GET['create'])) {
   echo $_SESSION['notification'];
   ?>
 
-  <form method='get'>
+  <form action='index.php' method='get'>
     <label for=userID>User ID:</label>
     <input type=text name=userID><br>
     <label for=password>Password:</label>
@@ -57,7 +57,7 @@ if(isset($_GET['create'])) {
     <input type=submit name='login' value='LOGIN'>
   </form>
   <h1>No account?</h1>
-  <form method='get'>
+  <form action='index.php' method='get'>
     <label for='newUser'>User ID:</label>
     <input type='text' name='newUser'><br>
     <label for='newPassword'>Password:</label>
