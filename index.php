@@ -6,7 +6,9 @@ session_start();
 include('connect.php');
 
 if(isset($_GET['login'])) {
-  $sql = "SELECT * FROM user WHERE userID='{$_GET['userID']}' AND password='{$_GET['password']}'";
+  $user = $_GET['userID'];
+  $password = $_GET['password'];
+  $sql = "SELECT * FROM user WHERE userID='{$user}' AND password='{$password}'";
   $result = mysqli_query($conn, $sql);
   if(mysqli_num_rows($result) > 0) { // If login is successful
     $_SESSION['user'] = $_GET['userID'];
