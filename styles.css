@@ -14,7 +14,8 @@ body {
   color: #f3f3f3;
   font-family: 'RobotoCondensed', sans-serif;
   margin: 0 auto;
-  padding: 0;
+  margin-bottom: 15vh;
+  padding: 0 0 2vh 0;
   width: 100vw;
   line-height: 1.3vh;
 }
@@ -51,7 +52,14 @@ body {
 }
 
 .check {
-
+  background-image: url(images/check.png);
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  border: solid 0px;
+  text-decoration: none;
+  width: 6vw;
+  height: auto;
 }
 
 .submit {
@@ -86,18 +94,33 @@ body {
 
 table {
   margin-bottom: 3vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 tr {
-
+  display: block;
+  margin: 0 auto 1vh auto;
+  height: 4vh;
+  width: 75vw;
+  border-bottom: 1px solid #F37402;
 }
 
-td {
+.task {
+height: 4vh;
+  width: 65vw;
+  margin: 0 auto;
+}
 
+.delete {
+    height: 3vh;
+    width: 6vw;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  background-color: rgba(100, 100, 100,0.5);
+  height: 13vh;
   left: 0;
   bottom: 0;
   width: 100%;

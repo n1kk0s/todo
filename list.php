@@ -61,7 +61,7 @@
 
       if ($result) {
         while ($row = $result->fetch_assoc()) {
-          echo "<tr><td>".$row['title']."</td><td><form acion='https://todo.nickweld.com/list.php' method='get'><input type='hidden' name='taskID' value='".$row['taskID']."'><input class='check' type='submit' name='delete' value='DELETE'></form></td></tr>";
+          echo "<tr><td class='task'>".$row['title']."</td><td class='delete'><form acion='https://todo.nickweld.com/list.php' method='get'><input type='hidden' name='taskID' value='".$row['taskID']."'><input class='check' type='submit' name='delete' value=''></form></td></tr>";
         }
       } else {
         echo "<p class='notification'>You don't have any tasks yet!</p>";
